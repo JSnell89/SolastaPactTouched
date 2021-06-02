@@ -6,7 +6,6 @@ using UnityModManagerNet;
 using HarmonyLib;
 using I2.Loc;
 using SolastaModApi;
-using SolastaModApi.Extensions;
 using System.Collections.Generic;
 
 namespace SolastaAcehighFeats
@@ -71,6 +70,7 @@ namespace SolastaAcehighFeats
         internal static void ModEntryPoint()
         {   
             PowerAttackFeatBuilder.AddToFeatList();
+            RecklessFuryFeatBuilder.AddToFeatList();
         }
 
         //Testing code
@@ -79,7 +79,7 @@ namespace SolastaAcehighFeats
             public static void Load()
             {
                 var features = new List<FeatureUnlockByLevel> {
-                    new FeatureUnlockByLevel(DatabaseHelper.FeatureDefinitionPowers.PowerReckless, 1),
+                    new FeatureUnlockByLevel(RagePowerBuilder.RagePower, 1),
                 };
 
                 DatabaseHelper.CharacterClassDefinitions.Fighter.FeatureUnlocks.AddRange(features);
