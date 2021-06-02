@@ -1,7 +1,7 @@
 ﻿using SolastaModApi;
 using SolastaModApi.Extensions;
 
-namespace SolastaTacticianSubclass
+namespace SolastaAcehighFeats
 {
     /*********************************************/
     /***************  Feats **********************/
@@ -140,58 +140,6 @@ namespace SolastaTacticianSubclass
         public static FeatureDefinitionAttackModifier PowerAttackTwoHandedAttackModifier
             => CreateAndAddToDB(PowerAttackTwoHandedAttackModifierName, PowerAttackTwoHandedAttackModifierNameGuid);
     }
-
-    //internal class PowerAttackAttackModifierOneHandedBuilderDeprecated : BaseDefinitionBuilder<FeatureDefinitionAdditionalDamage>
-    //{
-    //    const string PowerAttackAttackModifierOneHandedName = "PowerAttackAttackModifierOneHanded";
-    //    const string PowerAttackAttackModifierOneHandedNameGuid = "97d3e384-7fce-403a-9953-dcb5dd54a1e5";
-
-    //    protected PowerAttackAttackModifierOneHandedBuilderDeprecated(string name, string guid) : base(DatabaseHelper.FeatureDefinitionAdditionalDamages.AdditionalDamageBracersOfArchery, name, guid)
-    //    {
-    //        Definition.GuiPresentation.Title = "Feature/&PowerAttackAttackModifierOneHandedTitle";
-    //        Definition.GuiPresentation.Description = "Feature/&PowerAttackAttackModifierOneHandedDescription";
-    //        Definition.SetCachedName("Feature/&PowerAttackAttackModifierOneHandedTitle");
-
-    //        //Ideally we could limit the one handed to non-light weapons but I couldn't find a way to do that
-    //        //Had a melee weapon restriction originally, but if people want to 'Sharpshoot' with darts or something that's fine with me.
-    //        Definition.SetRequiredProperty(RuleDefinitions.AdditionalDamageRequiredProperty.None);
-    //        Definition.SetAdditionalDamageType(RuleDefinitions.AdditionalDamageType.SameAsBaseDamage);
-    //        Definition.SetDamageDiceNumber(3);
-    //        Definition.SetDamageDieType(RuleDefinitions.DieType.D1); //Ha, this doubles on crit, perhaps we can call it a 'feature'.
-    //    }
-
-    //    public static FeatureDefinitionAdditionalDamage CreateAndAddToDB(string name, string guid)
-    //        => new PowerAttackAttackModifierOneHandedBuilderDeprecated(name, guid).AddToDB();
-
-    //    public static FeatureDefinitionAdditionalDamage PowerAttackAttackModifierOneHanded
-    //        => CreateAndAddToDB(PowerAttackAttackModifierOneHandedName, PowerAttackAttackModifierOneHandedNameGuid);
-    //}
-
-    //internal class PowerAttackAttackModifierTwoHandedBuilderDeprecated : BaseDefinitionBuilder<FeatureDefinitionAdditionalDamage>
-    //{
-    //    const string PowerAttackAttackModifierTwoHandedName = "PowerAttackAttackModifierTwoHanded";
-    //    const string PowerAttackAttackModifierTwoHandedNameGuid = "a6bb31fd-850e-4a3f-84b2-b298bc0465b0";
-
-    //    protected PowerAttackAttackModifierTwoHandedBuilderDeprecated(string name, string guid) : base(DatabaseHelper.FeatureDefinitionAdditionalDamages.AdditionalDamageBracersOfArchery, name, guid)
-    //    {
-    //        Definition.GuiPresentation.Title = "Feature/&PowerAttackAttackModifierTwoHandedTitle";
-    //        Definition.GuiPresentation.Description = "Feature/&PowerAttackAttackModifierTwoHandedDescription";
-    //        Definition.SetCachedName("Feature/&PowerAttackAttackModifierTwoHandedTitle");
-
-    //        //Ideally we could limit the this to actually only be used on two handed weapons (or even 'Heavy' weapons) but I couldn't find a way to do that
-    //        //I originally had this limited to melee weapons but I figure the power attack should be applicable to ranged attacks as well to allow a 'sharpshooter' build as well.
-    //        Definition.SetRequiredProperty(RuleDefinitions.AdditionalDamageRequiredProperty.None);
-    //        Definition.SetAdditionalDamageType(RuleDefinitions.AdditionalDamageType.SameAsBaseDamage);
-    //        Definition.SetDamageDiceNumber(6);
-    //        Definition.SetDamageDieType(RuleDefinitions.DieType.D1); //Ha, this doubles on crit, perhaps we can call it a 'feature'.
-    //    }
-
-    //    public static FeatureDefinitionAdditionalDamage CreateAndAddToDB(string name, string guid)
-    //        => new PowerAttackAttackModifierTwoHandedBuilderDeprecated(name, guid).AddToDB();
-
-    //    public static FeatureDefinitionAdditionalDamage PowerAttackAttackModifierTwoHanded
-    //        => CreateAndAddToDB(PowerAttackAttackModifierTwoHandedName, PowerAttackAttackModifierTwoHandedNameGuid);
-    //}
 
     internal class PowerAttackConditionBuilder : BaseDefinitionBuilder<ConditionDefinition>
     {
