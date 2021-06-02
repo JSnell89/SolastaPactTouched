@@ -142,6 +142,7 @@ namespace SolastaAcehighFeats
             Definition.GuiPresentation.Title = "Feature/&RageDamageBonusAttackModifierTitle";
             Definition.GuiPresentation.Description = "Feature/&RageDamageBonusAttackModifierDescription";
 
+            //Currently works with ranged weapons, in the end it's fine.
             Definition.SetAttackRollModifier(0);
             Definition.SetDamageRollModifier(2);//Could find a way to up this at level 9 to match barb but that seems like a lot of work right now :)
         }
