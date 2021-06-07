@@ -45,8 +45,7 @@ namespace SolastaAcehighFeats
         public static FeatureDefinitionPower CreateAndAddToDB(string name, string guid)
             => new PowerAttackPowerBuilder(name, guid).AddToDB();
 
-        public static FeatureDefinitionPower PowerAttackPower
-            => CreateAndAddToDB(PowerAttackPowerName, PowerAttackPowerNameGuid);
+        public static FeatureDefinitionPower PowerAttackPower = CreateAndAddToDB(PowerAttackPowerName, PowerAttackPowerNameGuid);
     }
 
     internal class PowerAttackTwoHandedPowerBuilder : BaseDefinitionBuilder<FeatureDefinitionPower>
@@ -87,8 +86,7 @@ namespace SolastaAcehighFeats
         public static FeatureDefinitionPower CreateAndAddToDB(string name, string guid)
             => new PowerAttackTwoHandedPowerBuilder(name, guid).AddToDB();
 
-        public static FeatureDefinitionPower PowerAttackTwoHandedPower
-            => CreateAndAddToDB(PowerAttackTwoHandedPowerName, PowerAttackTwoHandedPowerNameGuid);
+        public static FeatureDefinitionPower PowerAttackTwoHandedPower = CreateAndAddToDB(PowerAttackTwoHandedPowerName, PowerAttackTwoHandedPowerNameGuid);
     }
 
     internal class PowerAttackOnHandedAttackModifierBuilder : BaseDefinitionBuilder<FeatureDefinitionAttackModifier>
@@ -137,8 +135,7 @@ namespace SolastaAcehighFeats
         public static FeatureDefinitionAttackModifier CreateAndAddToDB(string name, string guid)
             => new PowerAttackTwoHandedAttackModifierBuilder(name, guid).AddToDB();
 
-        public static FeatureDefinitionAttackModifier PowerAttackTwoHandedAttackModifier
-            => CreateAndAddToDB(PowerAttackTwoHandedAttackModifierName, PowerAttackTwoHandedAttackModifierNameGuid);
+        public static FeatureDefinitionAttackModifier PowerAttackTwoHandedAttackModifier = CreateAndAddToDB(PowerAttackTwoHandedAttackModifierName, PowerAttackTwoHandedAttackModifierNameGuid);
     }
 
     internal class PowerAttackConditionBuilder : BaseDefinitionBuilder<ConditionDefinition>
@@ -161,8 +158,7 @@ namespace SolastaAcehighFeats
         public static ConditionDefinition CreateAndAddToDB(string name, string guid)
             => new PowerAttackConditionBuilder(name, guid).AddToDB();
 
-        public static ConditionDefinition PowerAttackCondition
-            => CreateAndAddToDB(PowerAttackConditionName, PowerAttackConditionNameGuid);
+        public static ConditionDefinition PowerAttackCondition = CreateAndAddToDB(PowerAttackConditionName, PowerAttackConditionNameGuid);
     }
 
     internal class PowerAttackTwoHandedConditionBuilder : BaseDefinitionBuilder<ConditionDefinition>
@@ -185,8 +181,7 @@ namespace SolastaAcehighFeats
         public static ConditionDefinition CreateAndAddToDB(string name, string guid)
             => new PowerAttackTwoHandedConditionBuilder(name, guid).AddToDB();
 
-        public static ConditionDefinition PowerAttackTwoHandedCondition
-            => CreateAndAddToDB(PowerAttackTwoHandedConditionName, PowerAttackTwoHandedConditionNameGuid);
+        public static ConditionDefinition PowerAttackTwoHandedCondition = CreateAndAddToDB(PowerAttackTwoHandedConditionName, PowerAttackTwoHandedConditionNameGuid);
     }
 
     internal class PowerAttackFeatBuilder : BaseDefinitionBuilder<FeatDefinition>
@@ -208,8 +203,7 @@ namespace SolastaAcehighFeats
         public static FeatDefinition CreateAndAddToDB(string name, string guid)
             => new PowerAttackFeatBuilder(name, guid).AddToDB();
 
-        public static FeatDefinition PowerAttackFeat
-            => CreateAndAddToDB(PowerAttackFeatName, PowerAttackFeatNameGuid);
+        public static FeatDefinition PowerAttackFeat = CreateAndAddToDB(PowerAttackFeatName, PowerAttackFeatNameGuid);
 
         public static void AddToFeatList()
         {

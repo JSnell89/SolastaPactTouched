@@ -23,8 +23,7 @@ namespace SolastaAcehighFeats
         public static FeatDefinition CreateAndAddToDB(string name, string guid)
             => new RecklessFuryFeatBuilder(name, guid).AddToDB();
 
-        public static FeatDefinition RecklessFuryFeat
-            => CreateAndAddToDB(RecklessFuryFeatName, RecklessFuryFeatNameGuid);
+        public static FeatDefinition RecklessFuryFeat = CreateAndAddToDB(RecklessFuryFeatName, RecklessFuryFeatNameGuid);
 
         public static void AddToFeatList()
         {
@@ -73,8 +72,7 @@ namespace SolastaAcehighFeats
         public static FeatureDefinitionPower CreateAndAddToDB(string name, string guid)
             => new RagePowerBuilder(name, guid).AddToDB();
 
-        public static FeatureDefinitionPower RagePower
-            => CreateAndAddToDB(RagePowerName, RagePowerNameGuid);
+        public static FeatureDefinitionPower RagePower = CreateAndAddToDB(RagePowerName, RagePowerNameGuid);
     }
 
     internal class RageFeatConditionBuilder : BaseDefinitionBuilder<ConditionDefinition>
@@ -105,8 +103,7 @@ namespace SolastaAcehighFeats
         public static ConditionDefinition CreateAndAddToDB(string name, string guid)
             => new RageFeatConditionBuilder(name, guid).AddToDB();
 
-        public static ConditionDefinition RageFeatCondition
-            => CreateAndAddToDB(RageFeatConditionName, RageFeatConditionNameGuid);
+        public static ConditionDefinition RageFeatCondition = CreateAndAddToDB(RageFeatConditionName, RageFeatConditionNameGuid);
     }
 
     internal class RageStrengthSavingThrowAffinityBuilder : BaseDefinitionBuilder<FeatureDefinitionSavingThrowAffinity>
@@ -128,8 +125,7 @@ namespace SolastaAcehighFeats
         public static FeatureDefinitionSavingThrowAffinity CreateAndAddToDB(string name, string guid)
             => new RageStrengthSavingThrowAffinityBuilder(name, guid).AddToDB();
 
-        public static FeatureDefinitionSavingThrowAffinity RageStrengthSavingThrowAffinity
-            => CreateAndAddToDB(RageStrengthSavingThrowAffinityName, RageStrengthSavingThrowAffinityNameGuid);
+        public static FeatureDefinitionSavingThrowAffinity RageStrengthSavingThrowAffinity = CreateAndAddToDB(RageStrengthSavingThrowAffinityName, RageStrengthSavingThrowAffinityNameGuid);
     }
 
     internal class RageDamageBonusAttackModifierBuilder : BaseDefinitionBuilder<FeatureDefinitionAttackModifier>
@@ -150,7 +146,6 @@ namespace SolastaAcehighFeats
         public static FeatureDefinitionAttackModifier CreateAndAddToDB(string name, string guid)
             => new RageDamageBonusAttackModifierBuilder(name, guid).AddToDB();
 
-        public static FeatureDefinitionAttackModifier RageDamageBonusAttackModifier
-            => CreateAndAddToDB(RageDamageBonusAttackModifierName, RageDamageBonusAttackModifierNameGuid);
+        public static FeatureDefinitionAttackModifier RageDamageBonusAttackModifier = CreateAndAddToDB(RageDamageBonusAttackModifierName, RageDamageBonusAttackModifierNameGuid);
     }
 }
