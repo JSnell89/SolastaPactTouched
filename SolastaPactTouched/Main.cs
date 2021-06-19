@@ -68,22 +68,24 @@ namespace SolastaAcehighFeats
         }
 
         internal static void ModEntryPoint()
-        {   
-            PowerAttackFeatBuilder.AddToFeatList();
-            RecklessFuryFeatBuilder.AddToFeatList();
-        }
-
-        //Testing code
-        public static class FighterBuilder
         {
-            public static void Load()
-            {
-                var features = new List<FeatureUnlockByLevel> {
-                    new FeatureUnlockByLevel(RagePowerBuilder.RagePower, 1),
-                };
+            //var ebSpellCantrip = new SpellListDefinition.SpellsByLevelDuplet();
+            //ebSpellCantrip.Level = 0;
+            //ebSpellCantrip.Spells = new List<SpellDefinition>();
+            //ebSpellCantrip.Spells.Add(AHEldritchBlastSpellBuilder.AHEldritchBlastSpell);
 
-                DatabaseHelper.CharacterClassDefinitions.Fighter.FeatureUnlocks.AddRange(features);
-            }
+            //var hellishRebukeLevel1Spell = new SpellListDefinition.SpellsByLevelDuplet();
+            //hellishRebukeLevel1Spell.Level = 1;
+            //hellishRebukeLevel1Spell.Spells = new List<SpellDefinition>();
+            //hellishRebukeLevel1Spell.Spells.Add(AHHellishRebukeSpellBuilder.AHHellishRebukeSpell);
+            //DatabaseHelper.SpellListDefinitions.SpellListWizard.SpellsByLevel.ToArray()[0].Spells.Add(AHEldritchBlastSpellBuilder.AHEldritchBlastSpell);
+            //DatabaseHelper.SpellListDefinitions.SpellListWizard.SpellsByLevel.ToArray()[1].Spells.Add(AHPactMarkSpellBuilder.AHPactMarkSpell);
+            //DatabaseHelper.SpellListDefinitions.SpellListWizard.SpellsByLevel.ToArray()[1].Spells.Add(AHHellishRebukeSpellBuilder.AHHellishRebukeSpell);
+            //DatabaseHelper.CharacterClassDefinitions.Wizard.FeatureUnlocks.Add(new FeatureUnlockByLevel(AHHellishRebukePowerBuilder.AHHellishRebukeSpell, 1));
+            //PactTouchedFeatBuilder.AddToFeatList(); //Unfortunately doesn't work well as feat, adding cantrips doesn't work through feats :(
+
+            var pactTouchedWizardSubclass = AHWizardSubclassPactTouched.Build();
+            DatabaseHelper.FeatureDefinitionSubclassChoices.SubclassChoiceWizardArcaneTraditions.Subclasses.Add(pactTouchedWizardSubclass.Name);
         }
     }
 }

@@ -1,0 +1,38 @@
+Feat/&PactTouchedFeatTitle	Pact touched
+Feat/&PactTouchedFeatDescription You have been touched by a pact being and learned the spells Eldritch blast (cantrip) Pact Mark (spell).  You can also cast the Pact Mark spell for free once per day.
+Spell/&AHEldritchBlastSpellTitle Eldritch Blast
+Spell/&AHEldritchBlastSpellDescription A beam of crackling energy streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 force damage. The spell creates more than one beam when you reach higher levels: two beams at 5th level. You can direct the beams at the same target or at different ones. Make a separate attack roll for each beam.
+Spell/&AHPactMarkSpellTitle Pact Mark
+Spell/&AHPactMarkSpellDescription You place a mark form your pact onto a creature you can see within 90ft.  It becomes vulnerable to you and takes an additional 1d6 damage whenever you hit it with an attack (physical or spell attack).  This damage is the same type as the attack that hits.
+Spell/&AHPactMarkMarkedByPactConditionTitle	Marked by pact
+Spell/&AHPactMarkMarkedByPactConditionDescription This creature has been marked by a pact and takes extra damage from the marker.
+Spell/&AHPactMarkPactMarkConditionTitle Pact Mark
+Spell/&AHPactMarkPactMarkConditionDescription You can mark other creatures with a pact mark and do an addition 1d6 damage to them with physical or spell attacks.
+Spell/&AHPactMarkAdditionalDamageTitle	Pact mark damage
+Spell/&AHPactMarkAdditionalDamageDescription An additional 1d6 damage on a pact marked creature.
+Feedback/&AdditionalDamagePactMarkedLine	Pact mark does additional damage!
+Feedback/&AdditionalDamagePactMarkedFormat Pact mark!
+Feat/&AHPactTouchedShatterFeatPowerTitle Shatter
+Feat/&AHPactTouchedShatterFeatPowerDescription Use shatter once per day!  Deals 3d8 thunder damage in an area, half if enemies make a con save vs your DC.
+Feat/&AHPactMarkedFeatPowerTitle Pact mark
+Feat/&AHPactMarkedFeatPowerDescription You place a mark form your pact onto a creature you can see within 90ft.  It becomes vulnerable to you and takes an additional 1d6 damage whenever you hit it with an attack (physical or spell attack).  This damage is the same type as the attack that hits.
+Feat/&AHPactTouchedEldritchBlastFeatPowerTitle Eldritch Blast
+Feat/&AHPactTouchedEldritchBlastFeatPowerDescription A beam of crackling energy streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 force damage. The spell creates more than one beam when you reach higher levels: two beams at 5th level, three beams at 11th level, and four beams at 17th level. You can direct the beams at the same target or at different ones. Make a separate attack roll for each beam.
+Subclass/&AHWizardSubclassPactTouchedTitle Pact touched
+Subclass/&AHWizardSubclassPactTouchedDescription You have studied the arcane and whilst doing so have been touched by a power pact creature, granting you extra pact domain spells, the agonizing blast cantrip, a new pact mark spell, and the ability bring forth a spiritual pact weapon.  With only the cost of taking souls for your pact being.
+Feature/&AHPactTouchedBuildAutoPreparedSpellsTitle Pact domain spells
+Feature/&AHPactTouchedBuildAutoPreparedSpellsDescription You gain pact domain spells that are automatically learned and prepared.  Your domain spells are the following 'Pact mark' at level 2, Blindness at level 3, Fear at level 5, Black tentacles at level 7, and Mind twist at level 9.  Mod note, make sure to not take these spells when you leve up as there wasn't a way to mark them as already learned at that point that I found.
+Feature/&AHPactTouchedSubclassAgonizingBlassBonusCantripTitle	You learn the agonizing blast cantrip.
+Feature/&AHPactTouchedSubclassAgonizingBlassBonusCantripDescription	You learn the agonizing blast cantrip (upgraded Eldritch blast).  This spell does 1d10 + Spell modifier force damage.  At level 5 you get two separate attacks with the spell each doing 1d10 + spell modifier if they hit.
+Feature/&AHPactTouchSubclassPactSoulTakerAdditionalDamageTitle	Soul taker damage
+Feature/&AHPactTouchSubclassPactSoulTakerAdditionalDamageDescription You enter a trance to take the souls of your enemies. You do an additional d8 damage to wounded enemies for the duration, this effect can happen multiple times per turn.
+Feature/&AHPactTouchedSoulTakerConditionTitle Soul taker
+Feature/&AHPactTouchedSoulTakerConditionDescription You enter a trance to take the souls of your enemies. You do an additional d8 damage to wounded enemies for the duration, this effect can happen multiple times per turn.
+Feature/&AHPactTouchedSoulTakerPowerTitle Soul taker
+Feature/&AHPactTouchedSoulTakerPowerDescription Once per long rest you can enter a trance to help take the souls of your enemies. You do an additional d8 damage to wounded enemies for the duration, this effect can happen multiple times per turn.
+Feature/&AHPactTouchedSummonPactWeaponPowerTitle Spiritual pact weapon
+Feature/&AHPactTouchedSummonPactWeaponPowerDescription	Once per short rest you can summon forth a spiritual form of a weapon from your pact as a free action.  As a bonus action you can direct the weapon as desired to attack your foes.  The weapon moves up to 20ft each time before striking.
+Feedback/&AdditionalDamagePactSoulTakerLine	Soul taker does additional damage!
+Feedback/&AdditionalDamagePactSoulTakerFormat Soul taker!
+Spell/&AHAgonizingBlastSpellTitle Agonizing Blast
+Spell/&AHAgonizingBlastSpellDescription A beam of crackling energy streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 + spell modifier force damage. The spell creates more than one beam when you reach higher levels: two beams at 5th level. You can direct the beams at the same target or at different ones. Make a separate attack roll for each beam.
