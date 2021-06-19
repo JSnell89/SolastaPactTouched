@@ -3,7 +3,7 @@ using SolastaModApi.Extensions;
 using System;
 using System.Collections.Generic;
 
-namespace SolastaAcehighFeats
+namespace SolastaPactTouched
 {
     /*********************************************/
     /***************  Feats **********************/

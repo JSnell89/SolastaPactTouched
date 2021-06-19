@@ -8,7 +8,7 @@ using I2.Loc;
 using SolastaModApi;
 using System.Collections.Generic;
 
-namespace SolastaAcehighFeats
+namespace SolastaPactTouched
 {
     public class Main
     {
@@ -20,12 +20,12 @@ namespace SolastaAcehighFeats
 
         internal static void LoadTranslations()
         {
-            DirectoryInfo directoryInfo = new DirectoryInfo($@"{UnityModManager.modsPath}/SolastaAcehighFeats");
+            DirectoryInfo directoryInfo = new DirectoryInfo($@"{UnityModManager.modsPath}/SolastaPactTouched");
             FileInfo[] files = directoryInfo.GetFiles($"Translations-??.txt");
 
             foreach (var file in files)
             {
-                var filename = $@"{UnityModManager.modsPath}/SolastaAcehighFeats/{file.Name}";
+                var filename = $@"{UnityModManager.modsPath}/SolastaPactTouched/{file.Name}";
                 var code = file.Name.Substring(13, 2);
                 var languageSourceData = LocalizationManager.Sources[0];
                 var languageIndex = languageSourceData.GetLanguageIndexFromCode(code);

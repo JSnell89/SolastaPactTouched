@@ -1,6 +1,6 @@
 using HarmonyLib;
 
-namespace SolastaAcehighFeats.Patches
+namespace SolastaPactTouched.Patches
 {
     class GameManagerPatcher
     {
