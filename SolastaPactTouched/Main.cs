@@ -86,6 +86,8 @@ namespace SolastaPactTouched
 
             var pactTouchedWizardSubclass = AHWizardSubclassPactTouched.Build();
             DatabaseHelper.FeatureDefinitionSubclassChoices.SubclassChoiceWizardArcaneTraditions.Subclasses.Add(pactTouchedWizardSubclass.Name);
+
+            AHWarlockClassBuilder.BuildAndAddClassToDB();
         }
     }
 }

@@ -35,4 +35,60 @@ Feature/&AHPactTouchedSummonPactWeaponPowerDescription	Once per short rest you c
 Feedback/&AdditionalDamagePactSoulTakerLine	Soul taker does additional damage!
 Feedback/&AdditionalDamagePactSoulTakerFormat Soul taker!
 Spell/&AHAgonizingBlastSpellTitle Agonizing Blast
-Spell/&AHAgonizingBlastSpellDescription A beam of crackling energy streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 + spell modifier force damage. The spell creates more than one beam when you reach higher levels: two beams at 5th level. You can direct the beams at the same target or at different ones. Make a separate attack roll for each beam.
+Spell/&AHAgonizingBlastSpellDescription Note - only intended for Warlocks that take the Agonizing Blast Eldritch invocation. A beam of crackling energy streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 + spell modifier force damage. The spell creates more than one beam when you reach higher levels: two beams at 5th level. You can direct the beams at the same target or at different ones. Make a separate attack roll for each beam.
+Feature/&AHWarlockEldritchInvocationSetLevel2Title Eldritch Invocation
+Feature/&AHWarlockEldritchInvocationSetLevel2Description Add an eldritch invocation.
+Feature/&AHWarlockEldritchInvocationSetLevel5Title Eldritch Invocation
+Feature/&AHWarlockEldritchInvocationSetLevel5Description Add an eldritch invocation.
+Feature/&AHWarlockEldritchInvocationSetLevel7Title Eldritch Invocation
+Feature/&AHWarlockEldritchInvocationSetLevel7Description Add an eldritch invocation.
+Feature/&AHWarlockEldritchInvocationSetLevel9Title Eldritch Invocation
+Feature/&AHWarlockEldritchInvocationSetLevel9Description Add an eldritch invocation.
+Feature/&AHWarlockEldritchInvocationArmorOfShadowsPowerTitle	Armor of shadows
+Feature/&AHWarlockEldritchInvocationArmorOfShadowsPowerDescription	You can cast mage armor on yourself at will, without expending a spell slot or material components.
+Feature/&AHWarlockEldritchInvocationEldritchSightPowerTitle Eldritch sight
+Feature/&AHWarlockEldritchInvocationEldritchSightPowerDescription You can cast detect magic at will, without expending a spell slot.
+Feature/&AHWarlockEldritchInvocationFiendishVigorPowerTitle Fiendish vigor
+Feature/&AHWarlockEldritchInvocationFiendishVigorPowerDescription You can cast false life on yourself at will as a 1st-level spell, without expending a spell slot or material components.
+Feature/&AHWarlockEldritchInvocationAscendentStepPowerTitle Ascendent Step
+Feature/&AHWarlockEldritchInvocationAscendentStepPowerDescription You can cast levitate on yourself at will, without expending a spell slot or material components. (Prerequisite: 9th level)
+Feature/&AHWarlockEldritchInvocationOtherwordlyLeapPowerTitle Otherwordly leap
+Feature/&AHWarlockEldritchInvocationOtherwordlyLeapPowerDescription You can cast jump on yourself at will, without expending a spell slot or material components. (Prerequisite: 9th level)
+Feature/&AHWarlockEldritchInvocationDevilsSightPowerTitle Devils Sight
+Feature/&AHWarlockEldritchInvocationDevilsSightPowerDescription You gain darkvision to a distance of 120 feet. (Mod note, likely impossible to make it also able to see through magical darkness).
+Feature/&AHWarlockEldritchInvocationBeguilingInfluenceTitle Beguiling Influence
+Feature/&AHWarlockEldritchInvocationBeguilingInfluenceDescription You gain proficiency in the Deception and Persuasion skills. Mod note, don't take this if you already have proficiency in them :).
+Feature/&AHWarlockEldritchInvocationAgnoizingBlastTitle Agonizing blast
+Feature/&AHWarlockEldritchInvocationAgnoizingBlastDescription This invocation does nothing, it's intended that you take the Agonizing blast cantrip at level 1 and this at level 2 since there doesn't seem to be a good way to override a cantrip in a casters list.
+Feature/&AHWarlockEldritchInvocationRepellingBlastTitle Repelling blast
+Feature/&AHWarlockEldritchInvocationRepellingBlastDescription When you hit a creature with eldritch blast, you can push the creature up to 10 feet away from you in a straight line.  Mod note - This gives a free at will power to push a creature 10ft, try not to cheat with it and use it against targets you hit with Eldritch blast only :).  Adding in a whole new reaction choice on eldritch blast hitting would be crazy to implement.
+Feature/&AHWarlockEldritchInvocationThirstingBladeTitle Thirsting blade
+Feature/&AHWarlockEldritchInvocationThirstingBladeDescription You can attack with your pact weapon twice, instead of once, whenever you take the Attack action on your turn. (Supposed to have a Prerequisite of Pact of the blade, but it's not enforced).
+Class/&AHWarlockClassTitle Warlock
+Class/&AHWarlockClassDescription You have struck a bargain with an otherworldly being for magical power.
+Subclass/&AHWarlockSubclassPactTitle Pact
+Subclass/&AHWarlockSubclassPactDescription Choose the otherwordly being you have entered a pact with.  Mod note - This is currently done through 'Deity' and will display cleric domains as options as well since this is the only way currently that subclasses can be added at level 1.  Just choose the valid pact for Warlock.
+Feature/&AHWarlockClassSkillPointPoolTitle Warlock skills
+Feature/&AHWarlockClassSkillPointPoolDescription Warlocks can be proficient in two of Arcana, Deception, History, Intimidation, Investigation, Nature, and Religion
+Feat/&AHWarlockShortRestSpellFeatureTitle Pact magic
+Feat/&AHWarlockShortRestSpellFeatureDescription Your arcane research and the magic bestowed on you by your patron have given you facility with spells.  You regain spell slots on short rest and Charisma determines your spellcasting ability.  Mod note - Warlock spell slots are supposed to only be of the highest level they know, however Solasta doesn't recognize higher spell levels if there are no slots for lower levels (e.g. you can't have only level 2 slots).  As a current workaround you get 1 slot of each lower level slot that you should not use as it would be considered cheating :).
+Feat/&AHWarlockSpellListTitle Warlock spell list
+Feat/&AHWarlockSpellListDescription List of Warlock spells that can be learned.
+Feature/&AHWarlockClassPactBoonSetTitle Pact boon
+Feature/&AHWarlockClassPactBoonSetDescription At 3rd level, your otherworldly patron bestows a gift upon you for your loyal service. You can choose between Pact of the Chain and Pact of the Blade (Tome not implemented).
+Feature/&AHWarlockClassPactOfTheBladeSetTitle Pact of the Blade
+Feature/&AHWarlockClassPactOfTheBladeSetDescription You become proficient with all weapons and your weapon attacks are considered magical.
+Feature/&AHWarlockClassPactOfTheChainPowerTitle Pact of the Chain
+Feature/&AHWarlockClassPactOfTheChainPowerDescription You can summon a familiar to fight in battle once per short rest.  (Currently a flying snake).  Mod note - This may be updated in the future to something more akin to the SRD feature of Find Familiar.
+Subclass/&AHWarlockSubclassFiendPactTitle Fiend Pact
+Subclass/&AHWarlockSubclassFiendPactDescription You have made a pact with a fiend from the lower planes of existence, a being whose aims are evil, even if you strive against those aims. Such beings desire the corruption or destruction of all things, ultimately including you. Fiends powerful enough to forge a pact include demon lords such as Demogorgon, Orcus, Fraz'Urb-luu, and Baphomet; archdevils such as Asmodeus, Dispater, Mephistopheles, and Belial; pit fiends and balors that are especially mighty; and ultroloths and other lords of the yugoloths.
+Feature/&AHWarlockFiendPactSpellListTitle Fiend expanded spell list
+Feature/&AHWarlockFiendPactSpellListDescription The Fiend lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.  1st Burning hands, Bane (would be Command but it doesn't work)	2nd Blindness, Scorching Ray	3rd Fireball, Stinking Cloud	4th Fire Shield, Wall of Fire	5th	Flame Strike, Conjure Elemental Fire* (swapped since Hallow doesn't exist in Solasta)
+Feature/&AHWarlockFiendPactExtendedSpellListTitle Fiend expanded spell list
+Feature/&AHWarlockFiendPactExtendedSpellListDescription The Fiend lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.  1st Burning hands, Bane (would be Command but it doesn't work)	2nd Blindness, Scorching Ray	3rd Fireball, Stinking Cloud	4th Fire Shield, Wall of Fire	5th	Flame Strike, Conjure Elemental Fire* (swapped since Hallow doesn't exist in Solasta)
+Feature/&AHWarlockFiendPactDarkOnesBlessingPowerTitle Dark one's blessing
+Feature/&AHWarlockFiendPactDarkOnesBlessingPowerDescription Starting at 1st level, when you reduce a hostile creature to 0 hit points***, you gain temporary hit points equal to your Charisma modifier + your warlock level (minimum of 1). *** Mod note - This adds a free at will power to add these Temp HP that you will have to manually use when you down/kill an enemy.
+Feature/&AHWarlockFiendPactDarkOnesOwnLuckTitle Dark One's Own Luck
+Feature/&AHWarlockFiendPactDarkOnesOwnLuckDescription You gain an indomitable use once per day (Choice to re-roll saving throw if you fail).  (Doesn't match SRD but would require a whole new reaction ability to emulate the SRD).
+Feature/&AHWarlockFiendPactFiendishResilienceTitle Fiendish Resilience
+Feature/&AHWarlockFiendPactFiendishResilienceDescription You gain resistance to fire damage.  (Not same as SRD - I believe the proper implementation would require a power for every damage type with a shared resource pool as there doesn't seem to be a way to group power choices like spells right now).
