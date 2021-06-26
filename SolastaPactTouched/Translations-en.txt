@@ -92,3 +92,21 @@ Feature/&AHWarlockFiendPactDarkOnesOwnLuckTitle Dark One's Own Luck
 Feature/&AHWarlockFiendPactDarkOnesOwnLuckDescription You gain an indomitable use once per day (Choice to re-roll saving throw if you fail).  (Doesn't match SRD but would require a whole new reaction ability to emulate the SRD).
 Feature/&AHWarlockFiendPactFiendishResilienceTitle Fiendish Resilience
 Feature/&AHWarlockFiendPactFiendishResilienceDescription You gain resistance to fire damage.  (Not same as SRD - I believe the proper implementation would require a power for every damage type with a shared resource pool as there doesn't seem to be a way to group power choices like spells right now).
+Subclass/&AHWarlockSubclassSoulBladePactTitle	SoulBlade pact
+Subclass/&AHWarlockSubclassSoulBladePactDescription	You have struck a bargain with a sentient weapon that you feed souls to in return for power.
+Feature/&AHWarlockSoulBladePactSpellListTitle	Soul blade expanded spell list
+Feature/&AHWarlockSoulBladePactSpellListDescription	The Soul blade lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.  1st Shield, False life	2nd Blur, Branding Smite	3rd Haste, Slow		4th Phantasmal Killer, Black Tentacles	5th	Cone of Cold, Mind Twist
+Feature/&AHWarlockSoulBladePactExtendedSpellListTitle Soul blade expanded spell list
+Feature/&AHWarlockSoulBladePactExtendedSpellListDescription The Soul blade lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.  1st Shield, False life	2nd Blur, Branding Smite	3rd Haste, Slow		4th Phantasmal Killer, Black Tentacles	5th	Cone of Cold, Mind Twist
+Feature/&AHWarlockSoulBladePactEmpowerWeaponPowerTitle Soul Empower
+Feature/&AHWarlockSoulBladePactEmpowerWeaponPowerDescription Once per short rest you can empower a weapon with the power of souls for one minute, your weapon lights up for 20ft of bright light and 20ft of dim light and you add your charisma to your to hit.  Additionally all your attacks add your proficiency bonus in damage for the duration.
+Feature/&AHWarlockSoulBladePactSoulShieldPowerTitle Soul shield
+Feature/&AHWarlockSoulBladePactSoulShieldPowerDescription Once per short rest you use the power of souls to defend yourself.  Using a bonus action you gain temp hp equal to your level + charisma modifier.
+Feature/&AHWarlockSpendExcessSpellSlotPowerTitle Spend excess spell slot
+Feature/&AHWarlockSpendExcessSpellSlotPowerDescription Use this to get down to 2 spell slots after a short/long rest because of the limitation of Solasta Warlock spell slots.
+Feature/&AHSoulBladeEmpowerDamageBonusTitle	Soul Empowered
+Feature/&AHSoulBladeEmpowerDamageBonusDescription You are empowered and do a damage bonus equal to your proficiency on all your attacks.
+Feature/&AHSoulBladeEmpowerWeaponConditionTitle Soul Empowered
+Feature/&AHSoulBladeEmpowerWeaponConditionDescription You are empowered and do a damage bonus equal to your proficiency on all your attacks.
+Feedback/&AdditionalDamageSoulEmpoweredLine Soul Empowered does additional damage!
+Feedback/&AdditionalDamageSoulEmpoweredFormat Soul Empowered!

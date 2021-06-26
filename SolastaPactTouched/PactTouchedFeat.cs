@@ -606,7 +606,7 @@ namespace SolastaPactTouched
         }
 
 
-        internal class AHPactTouchedSummonPactWeaponPowerBuilder : BaseDefinitionBuilder<FeatureDefinitionPower>
+        public class AHPactTouchedSummonPactWeaponPowerBuilder : BaseDefinitionBuilder<FeatureDefinitionPower>
         {
             const string AHPactTouchedSummonPactWeaponPowerName = "AHPactTouchedSummonPactWeaponPower";
             private static readonly string AHPactTouchedSummonPactWeaponPowerGuid = GuidHelper.Create(PactTouchedFeatBuilder.PactTouchedMainGuid, AHPactTouchedSummonPactWeaponPowerName).ToString();

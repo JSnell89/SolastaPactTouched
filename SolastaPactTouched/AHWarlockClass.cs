@@ -73,6 +73,8 @@ namespace SolastaPactTouched
             Definition.FeatureUnlocks.Add(new FeatureUnlockByLevel(AHWarlockEldritchInvocationSetBuilderLevel2.AHWarlockEldritchInvocationSetLevel2, 2));
 
             Definition.FeatureUnlocks.Add(new FeatureUnlockByLevel(AHWarlockClassPactBoonSetBuilder.AHWarlockClassPactBoonSet, 3));
+            Definition.FeatureUnlocks.Add(new FeatureUnlockByLevel(AHWarlockSpendExcessSpellSlotPowerBuilder.AHWarlockSpendExcessSpellSlotPower, 3)); //Hopefully can be removed at some point.  Should spend the lowest level slot.
+            
 
             Definition.FeatureUnlocks.Add(new FeatureUnlockByLevel(DatabaseHelper.FeatureDefinitionFeatureSets.FeatureSetAbilityScoreChoice, 4));
             Definition.FeatureUnlocks.Add(new FeatureUnlockByLevel(AHWarlockEldritchInvocationSetBuilderLevel5.AHWarlockEldritchInvocationSetLevel5, 5));
@@ -104,10 +106,15 @@ namespace SolastaPactTouched
             //Might need to add subclasses after the class is in the DB?
             CharacterSubclassDefinition fiendPactSubclass = AHWarlockSubclassFiendPact.Build();
             WarlockFeatureDefinitionSubclassChoice.Subclasses.Add(fiendPactSubclass.Name);
+            CharacterSubclassDefinition soulBladePactSubclass = AHWarlockSubclassSoulBladePact.Build();
+            WarlockFeatureDefinitionSubclassChoice.Subclasses.Add(soulBladePactSubclass.Name);
 
             var deities = DatabaseRepository.GetDatabase<DeityDefinition>().GetAllElements();
             foreach (var deity in deities)
+            {
                 deity.Subclasses.Add(fiendPactSubclass.Name);
+                deity.Subclasses.Add(soulBladePactSubclass.Name);
+            }
             
         }
 
@@ -427,5 +434,38 @@ namespace SolastaPactTouched
             => new AHWarlockClassPactOfTheChainPowerBuilder(name, guid).AddToDB();
 
         public static FeatureDefinitionPower AHWarlockClassPactOfTheChainPower = CreateAndAddToDB(AHWarlockClassPactOfTheChainPowerName, AHWarlockClassPactOfTheChainPowerGuid);
+    }
+
+    /// <summary>
+    /// Power to spend the extra spell slots currently in the class to help reduce potential cheating for reaction spells etc.
+    /// </summary>
+    internal class AHWarlockSpendExcessSpellSlotPowerBuilder : BaseDefinitionBuilder<FeatureDefinitionPower>
+    {
+        const string AHWarlockSpendExcessSpellSlotPowerName = "AHWarlockSpendExcessSpellSlotPower";
+        private static readonly string AHWarlockSpendExcessSpellSlotPowerGuid = GuidHelper.Create(PactTouchedFeatBuilder.PactTouchedMainGuid, AHWarlockSpendExcessSpellSlotPowerName).ToString();
+
+        protected AHWarlockSpendExcessSpellSlotPowerBuilder(string name, string guid) : base(DatabaseHelper.FeatureDefinitionPowers.PowerFighterSecondWind, name, guid)
+        {
+            Definition.GuiPresentation.Title = "Feature/&AHWarlockSpendExcessSpellSlotPowerTitle";
+            Definition.GuiPresentation.Description = "Feature/&AHWarlockSpendExcessSpellSlotPowerDescription";
+
+            Definition.SetRechargeRate(RuleDefinitions.RechargeRate.SpellSlot);
+            Definition.SetSpellcastingFeature(AHWarlockShortRestSpellFeatureBuilder.AHWarlockSpellCastFeature);
+            Definition.SetFixedUsesPerRecharge(9999);
+            Definition.SetCostPerUse(1);
+            Definition.SetActivationTime(RuleDefinitions.ActivationTime.NoCost);
+
+            //Add to our new effect
+            EffectDescription newEffectDescription = new EffectDescription();
+            newEffectDescription.Copy(Definition.EffectDescription);
+            newEffectDescription.EffectForms.Clear();
+
+            Definition.SetEffectDescription(newEffectDescription);
+        }
+
+        public static FeatureDefinitionPower CreateAndAddToDB(string name, string guid)
+            => new AHWarlockSpendExcessSpellSlotPowerBuilder(name, guid).AddToDB();
+
+        public static FeatureDefinitionPower AHWarlockSpendExcessSpellSlotPower = CreateAndAddToDB(AHWarlockSpendExcessSpellSlotPowerName, AHWarlockSpendExcessSpellSlotPowerGuid);
     }
 }
