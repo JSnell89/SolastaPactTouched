@@ -73,7 +73,8 @@ namespace SolastaPactTouched
             Definition.FeatureUnlocks.Add(new FeatureUnlockByLevel(AHWarlockEldritchInvocationSetBuilderLevel2.AHWarlockEldritchInvocationSetLevel2, 2));
 
             Definition.FeatureUnlocks.Add(new FeatureUnlockByLevel(AHWarlockClassPactBoonSetBuilder.AHWarlockClassPactBoonSet, 3));
-            Definition.FeatureUnlocks.Add(new FeatureUnlockByLevel(AHWarlockSpendExcessSpellSlotPowerBuilder.AHWarlockSpendExcessSpellSlotPower, 3)); //Hopefully can be removed at some point.  Should spend the lowest level slot.
+            //No longer needed with the patchers to change spell recharging
+            //Definition.FeatureUnlocks.Add(new FeatureUnlockByLevel(AHWarlockSpendExcessSpellSlotPowerBuilder.AHWarlockSpendExcessSpellSlotPower, 3)); //Hopefully can be removed at some point.  Should spend the lowest level slot.
             
 
             Definition.FeatureUnlocks.Add(new FeatureUnlockByLevel(DatabaseHelper.FeatureDefinitionFeatureSets.FeatureSetAbilityScoreChoice, 4));
@@ -230,24 +231,24 @@ namespace SolastaPactTouched
             {
                 new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 1, Slots = new List<int> () { 1, 0, 0, 0, 0 } },
                 new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 2, Slots = new List<int> () { 2, 0, 0, 0, 0 } },
-                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 3, Slots = new List<int> () { 1, 2, 0, 0, 0 } },
-                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 4, Slots = new List<int> () { 1, 2, 0, 0, 0 } },
-                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 5, Slots = new List<int> () { 1, 1, 2, 0, 0 } },
-                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 6, Slots = new List<int> () { 1, 1, 2, 0, 0 } },
-                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 7, Slots = new List<int> () { 1, 1, 1, 2, 0 } },
-                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 8, Slots = new List<int> () { 1, 1, 1, 2, 0 } },
-                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 9, Slots = new List<int> () { 1, 1, 1, 1, 2 } },
-                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 10, Slots = new List<int> () { 1, 1, 1, 1, 2 } },
-                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 11, Slots = new List<int> () { 1, 1, 1, 1, 3 } },
-                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 12, Slots = new List<int> () { 1, 1, 1, 1, 3 } },
-                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 13, Slots = new List<int> () { 1, 1, 1, 1, 3 } },
-                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 14, Slots = new List<int> () { 1, 1, 1, 1, 3 } },
-                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 15, Slots = new List<int> () { 1, 1, 1, 1, 3 } },
-                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 16, Slots = new List<int> () { 1, 1, 1, 1, 3 } },
-                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 17, Slots = new List<int> () { 1, 1, 1, 1, 4 } },
-                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 18, Slots = new List<int> () { 1, 1, 1, 1, 4 } },
-                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 19, Slots = new List<int> () { 1, 1, 1, 1, 4 } },
-                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 20, Slots = new List<int> () { 1, 1, 1, 1, 4 } },
+                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 3, Slots = new List<int> () { 0, 2, 0, 0, 0 } },
+                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 4, Slots = new List<int> () { 0, 2, 0, 0, 0 } },
+                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 5, Slots = new List<int> () { 0, 0, 2, 0, 0 } },
+                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 6, Slots = new List<int> () { 0, 0, 2, 0, 0 } },
+                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 7, Slots = new List<int> () { 0, 0, 0, 2, 0 } },
+                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 8, Slots = new List<int> () { 0, 0, 0, 2, 0 } },
+                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 9, Slots = new List<int> () { 0, 0, 0, 0, 2 } },
+                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 10, Slots = new List<int> () { 0, 0, 0, 0, 2 } },
+                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 11, Slots = new List<int> () { 0, 0, 0, 0, 3 } },
+                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 12, Slots = new List<int> () { 0, 0, 0, 0, 3 } },
+                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 13, Slots = new List<int> () { 0, 0, 0, 0, 3 } },
+                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 14, Slots = new List<int> () { 0, 0, 0, 0, 3 } },
+                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 15, Slots = new List<int> () { 0, 0, 0, 0, 3 } },
+                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 16, Slots = new List<int> () { 0, 0, 0, 0, 3 } },
+                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 17, Slots = new List<int> () { 0, 0, 0, 0, 4 } },
+                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 18, Slots = new List<int> () { 0, 0, 0, 0, 4 } },
+                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 19, Slots = new List<int> () { 0, 0, 0, 0, 4 } },
+                new FeatureDefinitionCastSpell.SlotsByLevelDuplet() { Level = 20, Slots = new List<int> () { 0, 0, 0, 0, 4 } },
             });
             SetSpellCastingOrigin(FeatureDefinitionCastSpell.CastingOrigin.Class);
             SetSpellCastingAbility("Charisma");

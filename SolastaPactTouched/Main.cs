@@ -7,6 +7,8 @@ using HarmonyLib;
 using I2.Loc;
 using SolastaModApi;
 using System.Collections.Generic;
+using System.Linq;
+using SolastaModApi.Extensions;
 
 namespace SolastaPactTouched
 {
@@ -88,6 +90,20 @@ namespace SolastaPactTouched
             DatabaseHelper.FeatureDefinitionSubclassChoices.SubclassChoiceWizardArcaneTraditions.Subclasses.Add(pactTouchedWizardSubclass.Name);
 
             AHWarlockClassBuilder.BuildAndAddClassToDB();
+
+
+            //Make all spells upcastable
+            foreach (var spell in DatabaseRepository.GetDatabase<SpellDefinition>().OrderBy(s => s.Name))
+            {
+                var advancement = spell.EffectDescription.EffectAdvancement;
+
+                if (advancement?.EffectIncrementMethod == RuleDefinitions.EffectIncrementMethod.None && spell.SpellLevel > 0)
+                {
+                    Main.Log($"Upcast: {spell.Name}, advancement is none, level={spell.SpellLevel}, increment multiplier={advancement.IncrementMultiplier}, add targets={advancement.AdditionalTargetsPerIncrement}");
+
+                    advancement.SetEffectIncrementMethod(RuleDefinitions.EffectIncrementMethod.PerAdditionalSlotLevel);
+                }
+            }
         }
     }
 }
