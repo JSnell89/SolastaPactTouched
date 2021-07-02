@@ -75,7 +75,7 @@ namespace SolastaPactTouched
             Definition.FeatureUnlocks.Add(new FeatureUnlockByLevel(AHWarlockClassPactBoonSetBuilder.AHWarlockClassPactBoonSet, 3));
             //No longer needed with the patchers to change spell recharging
             //Definition.FeatureUnlocks.Add(new FeatureUnlockByLevel(AHWarlockSpendExcessSpellSlotPowerBuilder.AHWarlockSpendExcessSpellSlotPower, 3)); //Hopefully can be removed at some point.  Should spend the lowest level slot.
-            
+            var addDeprecatedFeatureToDB = AHWarlockSpendExcessSpellSlotPowerBuilder.AHWarlockSpendExcessSpellSlotPower;
 
             Definition.FeatureUnlocks.Add(new FeatureUnlockByLevel(DatabaseHelper.FeatureDefinitionFeatureSets.FeatureSetAbilityScoreChoice, 4));
             Definition.FeatureUnlocks.Add(new FeatureUnlockByLevel(AHWarlockEldritchInvocationSetBuilderLevel5.AHWarlockEldritchInvocationSetLevel5, 5));
