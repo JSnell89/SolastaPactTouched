@@ -110,7 +110,7 @@ namespace SolastaPactTouched
             Definition.SetCostPerUse(0);
             Definition.SetActivationTime(RuleDefinitions.ActivationTime.Action);
 
-            Definition.SetEffectDescription(DatabaseHelper.SpellDefinitions.MageArmor.EffectDescription);
+            Definition.EffectDescription.Copy(DatabaseHelper.SpellDefinitions.MageArmor.EffectDescription);
             Definition.EffectDescription.SetTargetType(RuleDefinitions.TargetType.Self);
         }
 
@@ -136,7 +136,7 @@ namespace SolastaPactTouched
             Definition.SetCostPerUse(0);
             Definition.SetActivationTime(RuleDefinitions.ActivationTime.Action);
 
-            Definition.SetEffectDescription(DatabaseHelper.SpellDefinitions.DetectMagic.EffectDescription);
+            Definition.EffectDescription.Copy(DatabaseHelper.SpellDefinitions.DetectMagic.EffectDescription);
         }
 
         public static FeatureDefinitionPower CreateAndAddToDB(string name, string guid)
@@ -161,7 +161,7 @@ namespace SolastaPactTouched
             Definition.SetCostPerUse(0);
             Definition.SetActivationTime(RuleDefinitions.ActivationTime.Action);
 
-            Definition.SetEffectDescription(DatabaseHelper.SpellDefinitions.FalseLife.EffectDescription);
+            Definition.EffectDescription.Copy(DatabaseHelper.SpellDefinitions.FalseLife.EffectDescription);
         }
 
         public static FeatureDefinitionPower CreateAndAddToDB(string name, string guid)
@@ -186,7 +186,7 @@ namespace SolastaPactTouched
             Definition.SetCostPerUse(0);
             Definition.SetActivationTime(RuleDefinitions.ActivationTime.Action);
 
-            Definition.SetEffectDescription(DatabaseHelper.SpellDefinitions.Levitate.EffectDescription);
+            Definition.EffectDescription.Copy(DatabaseHelper.SpellDefinitions.Levitate.EffectDescription);
             Definition.EffectDescription.SetTargetType(RuleDefinitions.TargetType.Self);
         }
 
@@ -212,7 +212,7 @@ namespace SolastaPactTouched
             Definition.SetCostPerUse(0);
             Definition.SetActivationTime(RuleDefinitions.ActivationTime.Action);
 
-            Definition.SetEffectDescription(DatabaseHelper.SpellDefinitions.Jump.EffectDescription);
+            Definition.EffectDescription.Copy(DatabaseHelper.SpellDefinitions.Jump.EffectDescription);
             Definition.EffectDescription.SetTargetType(RuleDefinitions.TargetType.Self);
         }
 
