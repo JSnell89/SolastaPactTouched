@@ -21,7 +21,7 @@ namespace SolastaPactTouched.Patches
         {
             internal static void Postfix(RulesetSpellRepertoire __instance, ref int __result)
             {
-                if(__instance.SpellCastingFeature.SlotsRecharge == RuleDefinitions.RechargeRate.ShortRest)
+                if(__instance?.SpellCastingFeature?.SlotsRecharge != null && __instance.SpellCastingFeature.SlotsRecharge == RuleDefinitions.RechargeRate.ShortRest)
                 {
                     if (__instance.SpellCastingFeature == null)
                     {
