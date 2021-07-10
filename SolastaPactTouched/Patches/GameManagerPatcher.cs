@@ -55,7 +55,6 @@ namespace SolastaPactTouched.Patches
                 }
             }
         }
-        //TODO ComputeHighestSpellLevel patch
 
         [HarmonyPatch(typeof(FeatureDefinitionCastSpell), "ComputeHighestSpellLevel")]
         internal static class FeatureDefinitionCastSpell_ComputeHighestSpellLevel_Patch
@@ -67,41 +66,54 @@ namespace SolastaPactTouched.Patches
             }
         }
 
-
-        [HarmonyPatch(typeof(RulesetSpellRepertoire), "RestoreAllSpellSlots")]
-        internal static class RulesetSpellRepertoire_RestoreAllSpellSlots_Patch
+        [HarmonyPatch(typeof(RulesetSpellRepertoire), "ComputeSpellSlots")]
+        internal static class RulesetSpellRepertoire_ComputeSpellSlots_Patch
         {
-            internal static void Postfix(RulesetSpellRepertoire __instance)
+            internal static void Postfix(RulesetSpellRepertoire __instance, List<FeatureDefinition> spellCastingAffinities)
             {
-                //Only apply to Warlock Short rest spells to not mess with other potential patches
-                if (__instance.SpellCastingFeature.SlotsRecharge == RuleDefinitions.RechargeRate.ShortRest)
-                {
+                //Don't do anything for non-short rest classes (non-Warlocks)
+                if (__instance.SpellCastingFeature.SlotsRecharge != RuleDefinitions.RechargeRate.ShortRest)
+                    return;
 
-                    if (__instance.SpellCastingLevel - 1 >= __instance.SpellCastingFeature.SlotsPerLevels.Count)
+                int maxSpellLevel = __instance.MaxSpellLevelOfSpellCastingLevel;
+                var currentInstanceSpellsSlotCapacities = (Dictionary<int, int>)AccessTools.Field(__instance.GetType(), "spellsSlotCapacities").GetValue(__instance);
+                currentInstanceSpellsSlotCapacities.Clear();
+                for (int i = 0; i < maxSpellLevel; i++)
+                {
+                    currentInstanceSpellsSlotCapacities[i + 1] = __instance.SpellCastingFeature.SlotsPerLevels[__instance.SpellCastingLevel - 1].Slots[i];
+
+                    //Not going to bother with used spell slots for Warlock, this only helps between patch saves and may give a spell slot back
+                    //if (this.legacyAvailableSpellsSlots.ContainsKey(i + 1))
+                    //{
+                    //    this.usedSpellsSlots.Add(i + 1, currentInstanceSpellsSlotCapacities[i + 1] - this.legacyAvailableSpellsSlots[i + 1]);
+                    //    this.legacyAvailableSpellsSlots.Remove(i + 1);
+                    //}
+                }
+                if (spellCastingAffinities != null && spellCastingAffinities.Count > 0)
+                {
+                    foreach (FeatureDefinition spellCastingAffinity in spellCastingAffinities)
                     {
-                        Trace.LogError(string.Format("Spellcasting feature {0} does not contain an entry for spell slots at spellcasting level {1}", __instance.SpellCastingFeature.Name, __instance.SpellCastingLevel));
-                        return;
-                    }
-                    int maxSpellLevel = __instance.SpellCastingFeature.SlotsPerLevels[__instance.SpellCastingLevel - 1].Slots.FindLastIndex(i => i > 0) + 1; //Change to find last non-zero index +1
-                    if (maxSpellLevel == -1)
-                    {
-                        maxSpellLevel = __instance.SpellCastingFeature.SpellListDefinition.MaxSpellLevel;
-                        if (maxSpellLevel > __instance.SpellCastingFeature.SlotsPerLevels[__instance.SpellCastingLevel - 1].Slots.Count)
+                        foreach (AdditionalSlotsDuplet additionalSlot in ((ISpellCastingAffinityProvider)spellCastingAffinity).AdditionalSlots)
                         {
-                            maxSpellLevel = __instance.SpellCastingFeature.SlotsPerLevels[__instance.SpellCastingLevel - 1].Slots.Count;
+                            if (!currentInstanceSpellsSlotCapacities.ContainsKey(additionalSlot.SlotLevel))
+                            {
+                                currentInstanceSpellsSlotCapacities[additionalSlot.SlotLevel] = additionalSlot.SlotsNumber;
+                            }
+                            else
+                            {
+                                Dictionary<int, int> item = currentInstanceSpellsSlotCapacities;
+                                int slotLevel = additionalSlot.SlotLevel;
+                                item[slotLevel] = item[slotLevel] + additionalSlot.SlotsNumber;
+                            }
                         }
                     }
-                    for (int i = 0; i < maxSpellLevel; i++)
-                    {
-                        __instance.AvailableSpellsSlots[i + 1] = __instance.SpellCastingFeature.SlotsPerLevels[__instance.SpellCastingLevel - 1].Slots[i];
-                    }
-                    RulesetSpellRepertoire.RepertoireRefreshedHandler repertoireRefreshed = __instance.RepertoireRefreshed;
-                    if (repertoireRefreshed == null)
-                    {
-                        return;
-                    }
-                    repertoireRefreshed(__instance);
                 }
+                RulesetSpellRepertoire.RepertoireRefreshedHandler repertoireRefreshed = __instance.RepertoireRefreshed;
+                if (repertoireRefreshed == null)
+                {
+                    return;
+                }
+                repertoireRefreshed(__instance);
             }
         }
     }
